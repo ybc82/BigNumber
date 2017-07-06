@@ -29,6 +29,11 @@ BigNumber::BigNumber (const int n) : num_ (NULL)  // constructor from int
   bc_int2num (&num_, n);
 } // end of constructor from int
 
+BigNumber::BigNumber (const long long int n) : num_ (NULL)  // constructor from int
+{
+  bc_llint2num (&num_, n);
+} // end of constructor from int
+
 // copy constructor
 BigNumber::BigNumber (const BigNumber & rhs)
   {
@@ -90,7 +95,7 @@ char * BigNumber::toString () const
   return bc_num2str(num_);
 } // end of BigNumber::toString 
 
-BigNumber::operator long () const
+BigNumber::operator int64_t () const
 {
   return bc_num2long (num_);
 } // end of BigNumber::operator long

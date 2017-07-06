@@ -86,7 +86,7 @@ typedef struct bc_struct
 #endif
 
 #ifndef LONG_MAX
-#define LONG_MAX 0x7ffffff
+#define LONG_MAX 0x7ffffffffffff
 #endif
 
 
@@ -122,7 +122,9 @@ _PROTOTYPE(char *bc_num2str, (bc_num num));
 
 _PROTOTYPE(void bc_int2num, (bc_num *num, int val));
 
-_PROTOTYPE(long bc_num2long, (bc_num num));
+_PROTOTYPE(void bc_llint2num, (bc_num *num, long long int val));
+
+_PROTOTYPE(long long bc_num2long, (bc_num num));
 
 _PROTOTYPE(int bc_compare, (bc_num n1, bc_num n2));
 
